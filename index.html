@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aksara Peduli Argantara — SAMBARA &amp; TELARA dari Desa Apa'an</title>
+  <meta name="description" content="Aksara Peduli Argantara: program pengabdian mahasiswa UNESA 2026 bersama warga Desa Apa'an, Kabupaten Sampang. Produk SAMBARA (Sambal Bandeng Aksara) dan TELARA (Telang Aksara)." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="img/favicon.png" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="img/logo-aksara.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,700;75,800;75,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="lewati" href="#konten">Langsung ke konten</a>
+
+  <!-- ================= NAVIGASI ================= -->
+  <header class="nav" id="nav">
+    <div class="wadah nav__isi">
+      <a href="#beranda" class="merek" aria-label="Aksara Peduli Argantara, ke beranda">
+        <img class="merek__logo" src="img/logo-aksara.png" alt="" width="38" height="38" />
+        <span class="merek__teks">Aksara <span>Peduli Argantara</span></span>
+      </a>
+
+      <button class="nav__tombol" id="navTombol" aria-expanded="false" aria-controls="navMenu">
+        <span class="sr">Buka menu</span>
+        <span class="nav__garis" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Navigasi utama">
+        <a href="#tentang">Tentang</a>
+        <a href="#produk">Produk</a>
+        <a href="#mitra">Mitra</a>
+        <a href="#pesan" class="tombol tombol--merah">Pesan produk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="konten">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="beranda" aria-labelledby="judulHero">
+      <div class="wadah">
+        <p class="label">Pengabdian mahasiswa UNESA · 2026</p>
+        <h1 class="hero__judul" id="judulHero">Rasa Madura, diolah bersama warga <em>Apa'an</em>.</h1>
+        <p class="hero__lead">
+          Aksara Peduli Argantara adalah tim pengabdian mahasiswa Universitas Negeri Surabaya
+          yang bekerja bersama warga Desa Apa'an, Kabupaten Sampang, untuk mengembangkan
+          dua produk olahan khas desa.
+        </p>
+
+        <div class="hero__panel">
+          <a href="#sambara" class="panel panel--merah">
+            <div class="panel__teks">
+              <span class="panel__kecil">Produk 01</span>
+              <span class="panel__nama">SAMBARA</span>
+              <span class="panel__sub">Sambal Bandeng Aksara</span>
+              <span class="panel__desk">Sambal bekasam ikan bandeng khas Apa'an. Netto 150 g.</span>
+              <span class="panel__tautan">Lihat produk <span aria-hidden="true">→</span></span>
+            </div>
+            <figure class="foto panel__foto">
+              <img src="img/pouch-sambara.png" alt="Kemasan pouch SAMBARA, Sambal Bandeng Aksara" onerror="this.parentNode.classList.add('foto--kosong')" />
+              <span class="foto__ganti">Foto kemasan<br /><small>img/pouch-sambara.png</small></span>
+            </figure>
+          </a>
+
+          <a href="#telara" class="panel panel--hitam">
+            <div class="panel__teks">
+              <span class="panel__kecil">Produk 02</span>
+              <span class="panel__nama">TELARA</span>
+              <span class="panel__sub">Telang Aksara</span>
+              <span class="panel__desk">Es krim bunga telang berwarna biru.</span>
+              <span class="panel__tautan">Lihat produk <span aria-hidden="true">→</span></span>
+            </div>
+            <svg class="es es--kecil panel__foto" viewBox="0 0 200 220" role="img" aria-label="Ilustrasi es krim TELARA berwarna biru">
+              <use href="#esKrim" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TENTANG ================= -->
+    <section class="bagian" id="tentang" aria-labelledby="judulTentang">
+      <div class="wadah">
+        <div class="kepala">
+          <p class="label">Tentang kami</p>
+          <h2 class="judul" id="judulTentang">Belajar dari desa, berkarya untuk desa.</h2>
+        </div>
+
+        <div class="tentang">
+          <div class="tentang__profil">
+            <p>
+              Aksara Peduli Argantara adalah program pengabdian kepada masyarakat yang dijalankan
+              mahasiswa Universitas Negeri Surabaya (UNESA) pada tahun 2026, dengan dukungan
+              DPPM Kemdiktisaintek.
+            </p>
+            <p>
+              Bersama warga Desa Apa'an, kami mengolah potensi lokal menjadi dua produk:
+              <strong>SAMBARA</strong>, sambal bekasam ikan bandeng, dan <strong>TELARA</strong>,
+              es krim bunga telang.
+            </p>
+          </div>
+
+          <dl class="fakta">
+            <div><dt>Perguruan tinggi</dt><dd>Universitas Negeri Surabaya (UNESA)</dd></div>
+            <div><dt>Tahun</dt><dd>2026</dd></div>
+            <div><dt>Didukung oleh</dt><dd>DPPM Kemdiktisaintek</dd></div>
+            <div><dt>Mitra</dt><dd>Desa Apa'an, Kabupaten Sampang, Jawa Timur</dd></div>
+            <div><dt>Produk</dt><dd>SAMBARA &amp; TELARA</dd></div>
+          </dl>
+        </div>
+
+        <h3 class="subjudul">Tim kami</h3>
+        <!-- Ganti setiap [ ... ] dengan data asli. Salin satu <li class="anggota"> untuk menambah anggota. -->
+        <ul class="tim">
+          <li class="anggota anggota--utama">
+            <span class="anggota__peran">Dosen pendamping</span>
+            <span class="anggota__nama"><span class="isian">[Nama dosen pendamping]</span></span>
+            <span class="anggota__info"><span class="isian">[Program studi / fakultas]</span></span>
+          </li>
+          <li class="anggota anggota--utama">
+            <span class="anggota__peran">Ketua tim</span>
+            <span class="anggota__nama"><span class="isian">[Nama ketua]</span></span>
+            <span class="anggota__info"><span class="isian">[Program studi · angkatan]</span></span>
+          </li>
+          <li class="anggota">
+            <span class="anggota__peran">Anggota</span>
+            <span class="anggota__nama"><span class="isian">[Nama anggota]</span></span>
+            <span class="anggota__info"><span class="isian">[Program studi · angkatan]</span></span>
+          </li>
+          <li class="anggota">
+            <span class="anggota__peran">Anggota</span>
+            <span class="anggota__nama"><span class="isian">[Nama anggota]</span></span>
+            <span class="anggota__info"><span class="isian">[Program studi · angkatan]</span></span>
+          </li>
+          <li class="anggota">
+            <span class="anggota__peran">Anggota</span>
+            <span class="anggota__nama"><span class="isian">[Nama anggota]</span></span>
+            <span class="anggota__info"><span class="isian">[Program studi · angkatan]</span></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= PRODUK ================= -->
+    <section id="produk" aria-labelledby="judulProduk">
+      <div class="wadah kepala kepala--produk">
+        <p class="label">Produk</p>
+        <h2 class="judul" id="judulProduk">Dua rasa dari Apa'an.</h2>
+      </div>
+
+      <!-- SAMBARA -->
+      <article class="pita pita--merah" id="sambara" aria-labelledby="judulSambara">
+        <div class="wadah pita__isi">
+          <div class="pita__info">
+            <p class="pita__kecil">Produk 01 · Netto 150 g</p>
+            <h3 class="pita__judul" id="judulSambara">SAMBARA</h3>
+            <p class="pita__sub">Sambal Bandeng Aksara</p>
+            <p>Sambal bekasam ikan bandeng khas Apa'an.</p>
+
+            <h4 class="pita__h4">Cara penyajian</h4>
+            <ol class="langkah-saji">
+              <li>Keluarkan sambal dari kemasan.</li>
+              <li>Panaskan hingga panas merata.</li>
+              <li>Sajikan dengan nasi hangat.</li>
+            </ol>
+            <p class="peringatan">
+              <strong>Perhatian:</strong> tidak disarankan dimakan langsung tanpa dipanaskan,
+              demi keamanan pangan.
+            </p>
+
+            <dl class="spek">
+              <div><dt>Penyimpanan</dt><dd>Wajib di kulkas</dd></div>
+              <div><dt>Daya tahan</dt><dd>1 minggu</dd></div>
+              <div><dt>Harga</dt><dd><span class="isian">[Harga]</span></dd></div>
+            </dl>
+          </div>
+
+          <div class="pita__visual">
+            <figure class="foto pita__foto">
+              <img src="img/sambal.png" alt="Sambal bandeng SAMBARA siap disajikan" onerror="this.parentNode.classList.add('foto--kosong')" />
+              <span class="foto__ganti">Foto sambal<br /><small>img/sambal.png</small></span>
+            </figure>
+
+            <figure class="grafik" id="grafik">
+              <figcaption class="grafik__judul">Komposisi SAMBARA</figcaption>
+              <ul class="grafik__daftar">
+                <li style="--n:35; --w:#C92A2A"><span class="grafik__label">Cabai merah keriting &amp; rawit</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">35%</span></li>
+                <li style="--n:25; --w:#D99A00"><span class="grafik__label">Minyak nabati (kelapa sawit)</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">25%</span></li>
+                <li style="--n:20; --w:#4D6478"><span class="grafik__label">Bekasam ikan bandeng</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">20%</span></li>
+                <li style="--n:10; --w:#8E2F5E"><span class="grafik__label">Bawang merah</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">10%</span></li>
+                <li style="--n:5;  --w:#857A66"><span class="grafik__label">Bawang putih</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">5%</span></li>
+                <li style="--n:3;  --w:#6B4A2B"><span class="grafik__label">Gula &amp; penyedap rasa</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">3%</span></li>
+                <li style="--n:2;  --w:#3F6B32"><span class="grafik__label">Rempah (serai, daun jeruk)</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">2%</span></li>
+              </ul>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- TELARA -->
+      <article class="pita pita--hitam" id="telara" aria-labelledby="judulTelara">
+        <div class="wadah pita__isi">
+          <div class="pita__info">
+            <p class="pita__kecil">Produk 02 · Ukuran <span class="isian">[...]</span></p>
+            <h3 class="pita__judul" id="judulTelara">TELARA</h3>
+            <p class="pita__sub">Telang Aksara</p>
+            <p>Es krim bunga telang berwarna biru.</p>
+
+            <dl class="spek">
+              <div><dt>Ukuran</dt><dd><span class="isian">[...]</span></dd></div>
+              <div><dt>Komposisi</dt><dd><span class="isian">[...]</span></dd></div>
+              <div><dt>Penyimpanan</dt><dd><span class="isian">[...]</span></dd></div>
+              <div><dt>Harga</dt><dd><span class="isian">[Harga]</span></dd></div>
+            </dl>
+          </div>
+
+          <div class="pita__visual pita__visual--telara">
+            <svg class="es" id="esTelara" viewBox="0 0 200 220" role="img" aria-labelledby="esJudul">
+              <title id="esJudul">Ilustrasi es krim TELARA</title>
+              <defs>
+                <g id="esKrim">
+                  <path class="es__cup" d="M42 122h116l-15 86H57z" />
+                  <rect class="es__pita-cup" x="48" y="150" width="104" height="22" />
+                  <path class="es__isi" d="M40 124c0-38 26-68 60-68s60 30 60 68c-7 9-13 9-20 0-7 9-13 9-20 0-7 9-13 9-20 0-7 9-13 9-20 0-7 9-13 9-20 0-7 9-13 9-20 0z" />
+                  <circle class="es__isi" cx="100" cy="58" r="18" />
+                  <ellipse class="es__kilau" cx="74" cy="86" rx="10" ry="16" transform="rotate(-25 74 86)" />
+                </g>
+              </defs>
+              <use href="#esKrim" />
+              <path class="es__tetes" d="M100 0c5 9 9 14 9 19a9 9 0 0 1-18 0c0-5 4-10 9-19z" />
+            </svg>
+            <button type="button" class="tombol tombol--putih" id="tombolJeruk" aria-pressed="false">Teteskan jeruk nipis</button>
+            <p class="es__ket" id="esKet" aria-live="polite">
+              Bunga telang mengandung pigmen antosianin yang berubah warna saat terkena asam.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ================= MITRA & DAMPAK ================= -->
+    <section class="bagian" id="mitra" aria-labelledby="judulMitra">
+      <div class="wadah">
+        <div class="kepala">
+          <p class="label">Mitra &amp; dampak</p>
+          <h2 class="judul" id="judulMitra">Desa Apa'an, Sampang.</h2>
+        </div>
+
+        <div class="mitra">
+          <div class="lokasi">
+            <img class="lokasi__peta" src="img/peta-apaan.jpg" width="1400" height="942" loading="lazy"
+              alt="Peta ilustrasi Desa Apa'an, Kecamatan Pangarengan, Kabupaten Sampang, dengan penanda lokasi desa dan garis pantai di sisi selatan" />
+            <p class="lokasi__kecil">Lokasi mitra</p>
+            <p class="lokasi__nama">Desa Apa'an</p>
+            <p class="lokasi__alamat">Kecamatan Pangarengan, Kabupaten Sampang<br />Pulau Madura, Jawa Timur</p>
+            <a class="tombol tombol--garis" href="https://www.google.com/maps/search/?api=1&amp;query=Desa+Apa'an+Pangarengan+Sampang" target="_blank" rel="noopener">Buka di Google Maps<span class="sr"> (tab baru)</span></a>
+
+            <dl class="dampak">
+              <div><dt>Warga terlibat</dt><dd><span class="isian">[...]</span></dd></div>
+              <div><dt>Pelatihan</dt><dd><span class="isian">[...]</span></dd></div>
+              <div><dt>Produk terjual</dt><dd><span class="isian">[...]</span></dd></div>
+            </dl>
+          </div>
+
+          <ol class="tahap">
+            <li>
+              <h3>Mengenali potensi desa</h3>
+              <p>Berdiskusi dengan warga untuk memetakan bahan dan olahan khas Apa'an.</p>
+            </li>
+            <li>
+              <h3>Mengembangkan resep</h3>
+              <p>Menyusun resep SAMBARA dan TELARA bersama warga, lalu mengujinya.</p>
+            </li>
+            <li>
+              <h3>Pelatihan produksi</h3>
+              <p>Berlatih mengolah produk dengan memperhatikan keamanan pangan.</p>
+            </li>
+            <li>
+              <h3>Kemasan &amp; label</h3>
+              <p>Merancang kemasan dan label yang memuat informasi produk dengan jelas.</p>
+            </li>
+            <li>
+              <h3>Pemasaran</h3>
+              <p>Memperkenalkan produk ke pembeli, baik secara langsung maupun daring.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KONTAK & PEMESANAN ================= -->
+    <section class="bagian bagian--abu" id="pesan" aria-labelledby="judulPesan">
+      <div class="wadah">
+        <div class="kepala">
+          <p class="label">Kontak &amp; pemesanan</p>
+          <h2 class="judul" id="judulPesan">Pesan lewat WhatsApp.</h2>
+          <p class="kepala__sub">Isi formulir di bawah. Pesan pesanan akan tersusun otomatis, lalu tinggal dikirim.</p>
+        </div>
+
+        <div class="pesan">
+          <form class="form" id="formPesan" novalidate>
+            <div class="form__baris">
+              <label for="fNama">Nama</label>
+              <input id="fNama" name="nama" type="text" autocomplete="name" required />
+            </div>
+            <div class="form__baris">
+              <label for="fAlamat">Alamat pengiriman / kota</label>
+              <input id="fAlamat" name="alamat" type="text" autocomplete="street-address" required />
+            </div>
+
+            <fieldset class="form__produk">
+              <legend>Jumlah pesanan</legend>
+              <div class="form__jumlah">
+                <label for="fSambara">SAMBARA <small>(150 g)</small></label>
+                <input id="fSambara" name="sambara" type="number" min="0" max="99" value="0" inputmode="numeric" />
+              </div>
+              <div class="form__jumlah">
+                <label for="fTelara">TELARA</label>
+                <input id="fTelara" name="telara" type="number" min="0" max="99" value="0" inputmode="numeric" />
+              </div>
+            </fieldset>
+
+            <div class="form__baris">
+              <label for="fCatatan">Catatan <small>(opsional)</small></label>
+              <textarea id="fCatatan" name="catatan" rows="3"></textarea>
+            </div>
+
+            <p class="form__galat" id="formGalat" role="alert"></p>
+          </form>
+
+          <div class="pratinjau">
+            <label for="pratinjauPesan" class="pratinjau__judul">Pesan yang akan dikirim</label>
+            <textarea id="pratinjauPesan" readonly rows="10"></textarea>
+            <div class="pratinjau__aksi">
+              <button type="submit" form="formPesan" class="tombol tombol--merah">Kirim lewat WhatsApp</button>
+              <button type="button" class="tombol tombol--garis" id="tombolSalin">Salin pesan</button>
+            </div>
+            <p class="pratinjau__status" id="statusSalin" aria-live="polite"></p>
+            <p class="pratinjau__kontak">
+              WhatsApp: <span class="isian">[Nomor WhatsApp]</span> ·
+              Instagram: <span class="isian">[@akun]</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="wadah">
+      <div class="logo" role="list" aria-label="Didukung oleh">
+        <!-- Mahasiswa Berdampak & Diktisaintek Berdampak tidak punya situs khusus, jadi diarahkan ke situs Kemdiktisaintek. -->
+        <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/" target="_blank" rel="noopener"><img src="img/logo-kemdiktisaintek.png" alt="Logo Kementerian Pendidikan Tinggi, Sains, dan Teknologi (Kemdiktisaintek)" /><span class="sr"> (situs resmi, tab baru)</span></a></div>
+        <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/" target="_blank" rel="noopener"><img src="img/logo-mahasiswa-berdampak.png" alt="Logo Mahasiswa Berdampak" /><span class="sr"> (situs Kemdiktisaintek, tab baru)</span></a></div>
+        <div class="kotak" role="listitem"><a href="https://unesa.ac.id/" target="_blank" rel="noopener"><img src="img/logo-unesa.png" alt="Logo Universitas Negeri Surabaya (UNESA)" /><span class="sr"> (situs resmi, tab baru)</span></a></div>
+        <div class="kotak" role="listitem"><a href="https://sampangkab.go.id/" target="_blank" rel="noopener"><img src="img/Lambang_Kabupaten_Sampang.png" alt="Lambang Kabupaten Sampang" /><span class="sr"> (situs resmi, tab baru)</span></a></div>
+        <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/public-service/layanan-ditjen-risbang" target="_blank" rel="noopener"><img src="img/logo-ditjen-risbang.png" alt="Logo Direktorat Jenderal Riset dan Pengembangan (Ditjen Risbang)" /><span class="sr"> (halaman resmi, tab baru)</span></a></div>
+        <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/" target="_blank" rel="noopener"><img src="img/logo-diktisaintek-berdampak.png" alt="Logo Diktisaintek Berdampak" /><span class="sr"> (situs Kemdiktisaintek, tab baru)</span></a></div>
+      </div>
+      <div class="footer__bawah">
+        <p class="merek merek--footer"><img class="merek__logo merek__logo--footer" src="img/logo-aksara.png" alt="" width="48" height="48" /><span class="merek__teks">Aksara <span>Peduli Argantara</span></span></p>
+        <p>© 2026 Aksara Peduli Argantara · Universitas Negeri Surabaya bersama Desa Apa'an, Kabupaten Sampang.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
