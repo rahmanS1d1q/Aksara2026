@@ -144,15 +144,37 @@ h1, h2, h3, h4 {
 .subjudul { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-top: clamp(3rem, 6vw, 4.5rem); }
 
 /* ================= HERO ================= */
-.hero { padding: clamp(40px, 8vw, 88px) 0 clamp(56px, 8vw, 96px); }
-.hero__judul {
-  font-size: clamp(2.6rem, 9vw, 6.5rem);
-  font-weight: 900;
-  max-width: 13ch;
-  margin-bottom: .35em;
+.hero { padding: 0 0 clamp(56px, 8vw, 96px); }
+
+/* Sampul foto bersama warga + lapisan hitam transparan supaya teks putih terbaca */
+.hero__sampul {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: flex-end;
+  min-height: min(82vh, 760px);
+  padding: clamp(56px, 10vw, 120px) 0 clamp(40px, 6vw, 72px);
+  background: var(--hitam); color: var(--putih);
 }
-.hero__judul em { font-style: normal; color: var(--merah); }
-.hero__lead { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--hitam-70); max-width: 60ch; }
+.hero__foto {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%;
+}
+.hero__sampul::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(0, 0, 0, .62); }
+.hero__teks .label { color: var(--putih); }
+/* Judul dipecah 3 baris tetap supaya rata dan seimbang */
+.hero__judul {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: .98;
+  letter-spacing: 0;
+  margin-bottom: .45em;
+}
+.hero__judul .baris { display: block; }
+.hero__judul em {
+  display: inline-block;
+  font-style: normal; background: var(--merah); color: var(--putih);
+  padding: .04em .14em 0; margin-top: .08em;
+}
+.hero__lead { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--putih); max-width: 60ch; margin: 0; }
 
 .hero__panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: clamp(2rem, 5vw, 3rem); }
 .panel {
@@ -233,27 +255,41 @@ h1, h2, h3, h4 {
 .pita__foto { max-width: 360px; }
 .pita__foto img { border-radius: var(--sudut); }
 
-/* Grafik komposisi (latar putih supaya warna data terbaca) */
+/* Kartu komposisi (latar putih) */
 .grafik { margin: 0; background: var(--putih); color: var(--hitam); padding: clamp(1.25rem, 3vw, 1.75rem); border-radius: var(--sudut); }
 .grafik__judul { font: 800 1.5rem/1 var(--judul); font-stretch: 75%; text-transform: uppercase; margin-bottom: 1.25rem; }
-.grafik__daftar { list-style: none; margin: 0; padding: 0; display: grid; gap: .85rem; }
-.grafik__daftar li { display: grid; grid-template-columns: 1fr 3rem; grid-template-areas: "label nilai" "batang batang"; gap: .3rem .5rem; align-items: end; }
-.grafik__label { grid-area: label; font-size: .9rem; font-weight: 600; }
-.grafik__nilai { grid-area: nilai; text-align: right; font: 800 1.15rem/1 var(--judul); font-stretch: 75%; }
-.grafik__batang { grid-area: batang; height: 12px; background: var(--hitam-10); border-radius: 2px; overflow: hidden; }
-.grafik__batang span {
-  display: block; height: 100%; width: 0; background: var(--w);
-  transition: width 1s cubic-bezier(.2, .8, .2, 1);
-}
-.grafik.tampil .grafik__batang span { width: calc(var(--n) / 35 * 100%); }
-.grafik.tampil li:nth-child(2) span { transition-delay: .08s; }
-.grafik.tampil li:nth-child(3) span { transition-delay: .16s; }
-.grafik.tampil li:nth-child(4) span { transition-delay: .24s; }
-.grafik.tampil li:nth-child(5) span { transition-delay: .32s; }
-.grafik.tampil li:nth-child(6) span { transition-delay: .40s; }
-.grafik.tampil li:nth-child(7) span { transition-delay: .48s; }
 
-/* Ilustrasi es krim TELARA */
+/* Nama produk bertanda hubung tidak boleh terpotong ("MOO-" / "KRIM") */
+.pita__judul--panjang { font-size: clamp(2.8rem, 9vw, 5.6rem); white-space: nowrap; }
+.panel__nama { white-space: nowrap; }
+/* Ilustrasi ikut terlihat saat daftar komposisi panjang di-scroll (desktop) */
+@media (min-width: 901px) { .pita__visual { position: sticky; top: calc(var(--nav-tinggi) + 32px); } }
+
+/* Tagline merek (MOO-KRIM) */
+.pita__tagline {
+  display: inline-block; margin: 0 0 .9rem;
+  font: 800 1.15rem/1 var(--judul); font-stretch: 75%; text-transform: uppercase; letter-spacing: .06em;
+  border: 2px solid var(--putih); padding: .4em .7em .35em; border-radius: var(--sudut);
+}
+
+/* Komposisi berupa daftar bahan, gaya kartu sama dengan grafik SAMBARA */
+.komposisi { margin-top: 1.5rem; }
+.komposisi .grafik__judul { margin-bottom: .35rem; }
+.komposisi__ket { margin: 0 0 1rem; font-size: .88rem; color: var(--hitam-70); }
+.komposisi__grup {
+  font-size: 1.05rem; color: var(--merah); margin: 1.1rem 0 .4rem;
+  padding-bottom: .4rem; border-bottom: 2px solid var(--hitam);
+}
+.komposisi__grup:first-of-type { margin-top: 0; }
+.komposisi__daftar { list-style: none; margin: 0; padding: 0; }
+.komposisi__daftar li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  padding: .5rem 0; border-bottom: 1px solid var(--hitam-10); font-size: .92rem;
+}
+.komposisi__daftar li span:first-child { font-weight: 600; }
+.komposisi__daftar li span:last-child { font: 800 1.1rem/1 var(--judul); font-stretch: 75%; white-space: nowrap; }
+
+/* Ilustrasi es krim MOO-KRIM */
 .pita__visual--telara { justify-items: center; text-align: center; }
 .es { --es: var(--telang-biru); width: min(300px, 100%); height: auto; overflow: visible; }
 .es.ungu { --es: var(--telang-ungu); }
@@ -331,7 +367,12 @@ textarea { resize: vertical; }
 .pratinjau textarea { background: var(--hitam-04); font-size: .92rem; line-height: 1.55; min-height: 220px; }
 .pratinjau__aksi { display: flex; flex-wrap: wrap; gap: .75rem; }
 .pratinjau__status { margin: 0; font-weight: 600; min-height: 1.4em; }
-.pratinjau__kontak { margin: 0; font-size: .9rem; color: var(--hitam-70); border-top: 1px solid var(--hitam-10); padding-top: .75rem; }
+.pratinjau__kontak { list-style: none; margin: 0; padding: .75rem 0 0; font-size: .9rem; border-top: 1px solid var(--hitam-10); display: grid; gap: .35rem; }
+.pratinjau__kontak li { display: grid; grid-template-columns: 6.5rem 1fr; gap: .5rem; align-items: baseline; }
+.pratinjau__kontak li > * { justify-self: start; }
+.pratinjau__kontak li > span:first-child { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--hitam-70); }
+.pratinjau__kontak a { font-weight: 700; color: var(--merah); overflow-wrap: anywhere; }
+.pratinjau__kontak a:hover { color: var(--hitam); }
 
 /* ================= FOOTER ================= */
 .footer { background: var(--hitam); color: var(--putih-80); padding: clamp(40px, 6vw, 64px) 0 2rem; }
@@ -350,6 +391,13 @@ textarea { resize: vertical; }
 .kotak.foto--kosong .foto__ganti { min-height: 0; height: 56px; width: 100%; border-width: 1px; font-size: .8rem; padding: 0 .75rem; }
 .footer__bawah { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; border-top: 1px solid var(--putih-20); padding-top: 1.5rem; }
 .footer__bawah p { margin: 0; font-size: .88rem; }
+.sosmed { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.sosmed a {
+  display: inline-flex; align-items: center; gap: .5rem; min-height: 44px;
+  color: var(--putih); text-decoration: none; font-weight: 600; font-size: .92rem;
+}
+.sosmed svg { width: 22px; height: 22px; flex-shrink: 0; }
+.sosmed a:hover span:not(.sr) { text-decoration: underline; text-decoration-color: var(--merah); text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .footer .merek__teks { color: var(--putih); font-size: 1.4rem; }
 
 /* ================= RESPONSIF ================= */
@@ -380,9 +428,32 @@ textarea { resize: vertical; }
   .pratinjau__aksi .tombol { flex: 1 1 100%; }
 }
 
+/* ================= EFEK SCROLL =================
+   Kelas .gerak dipasang oleh JS hanya jika gerakan tidak dikurangi. */
+main, .footer { overflow-x: clip; } /* cegah scroll horizontal saat elemen masuk dari samping */
+html.gerak .muncul {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .75s ease, transform .75s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--tunda, 0ms);
+}
+html.gerak .muncul--kiri  { transform: translateX(-40px); }
+html.gerak .muncul--kanan { transform: translateX(40px); }
+html.gerak .muncul.terlihat { opacity: 1; transform: none; }
+
+/* Hero saat halaman dibuka */
+html.gerak .hero__foto { transform: scale(1.05); will-change: transform; animation: fotoMasuk 1.4s ease both; }
+html.gerak .hero__teks > * { animation: teksNaik .9s cubic-bezier(.2, .7, .2, 1) both; }
+html.gerak .hero__teks > :nth-child(1) { animation-delay: .15s; }
+html.gerak .hero__teks > :nth-child(2) { animation-delay: .3s; }
+html.gerak .hero__teks > :nth-child(3) { animation-delay: .5s; }
+html.gerak .hero__judul em { animation: blokMerah .6s cubic-bezier(.2, .7, .2, 1) .9s both; transform-origin: left; }
+@keyframes fotoMasuk { from { opacity: 0; } to { opacity: 1; } }
+@keyframes teksNaik { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: none; } }
+@keyframes blokMerah { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
 /* ================= GERAK DIKURANGI ================= */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
-  .grafik__batang span { width: calc(var(--n) / 35 * 100%); }
 }

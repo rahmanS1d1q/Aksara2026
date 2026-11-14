@@ -8,6 +8,78 @@ const NOMOR_WA = '';
 
 const geraknyaDikurangi = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* ---------- Efek muncul saat di-scroll ----------
+   Hanya aktif kalau JS jalan dan pengguna tidak memilih "kurangi gerakan".
+   Tanpa JS, semua konten tetap tampil normal. */
+if (!geraknyaDikurangi && 'IntersectionObserver' in window) {
+  document.documentElement.classList.add('gerak');
+
+  // [selector, arah]  arah: '' = naik, 'kiri' / 'kanan' = geser dari samping
+  const targetMuncul = [
+    ['.hero__panel .panel', ''],
+    ['.kepala', ''],
+    ['.tentang__profil', 'kiri'],
+    ['.fakta', 'kanan'],
+    ['.subjudul', ''],
+    ['.anggota', ''],
+    ['.pita__info', 'kiri'],
+    ['.pita__visual', 'kanan'],
+    ['.lokasi', 'kiri'],
+    ['.tahap li', ''],
+    ['.form', 'kiri'],
+    ['.pratinjau', 'kanan'],
+    ['.kotak', ''],
+    ['.footer__bawah', ''],
+  ];
+
+  const semua = [];
+  targetMuncul.forEach(([sel, arah]) => {
+    document.querySelectorAll(sel).forEach((el) => {
+      el.classList.add('muncul');
+      if (arah) el.classList.add(`muncul--${arah}`);
+      // Elemen bersaudara muncul berurutan (maks. 6 langkah)
+      const saudara = [...el.parentElement.children].filter((c) => c.matches(sel));
+      const urutan = Math.min(saudara.indexOf(el), 6);
+      el.style.setProperty('--tunda', `${urutan * 90}ms`);
+      semua.push(el);
+    });
+  });
+
+  const pengamatMuncul = new IntersectionObserver(
+    (entri) => {
+      entri.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        el.classList.add('terlihat');
+        pengamatMuncul.unobserve(el);
+        // Setelah selesai, kembalikan elemen ke gaya aslinya (mis. efek hover)
+        el.addEventListener('transitionend', function selesai(ev) {
+          if (ev.target !== el || ev.propertyName !== 'opacity') return;
+          el.classList.remove('muncul', 'muncul--kiri', 'muncul--kanan', 'terlihat');
+          el.style.removeProperty('--tunda');
+          el.removeEventListener('transitionend', selesai);
+        });
+      });
+    },
+    { threshold: 0.12 }
+  );
+  semua.forEach((el) => pengamatMuncul.observe(el));
+
+  // Foto hero bergerak lebih lambat dari scroll (efek parallax ringan)
+  const fotoHero = document.querySelector('.hero__foto');
+  const sampul = document.querySelector('.hero__sampul');
+  let antre = false;
+  window.addEventListener('scroll', () => {
+    if (antre) return;
+    antre = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if (y < sampul.offsetHeight) fotoHero.style.transform = `translateY(${y * 0.3}px) scale(1.05)`;
+      antre = false;
+    });
+  }, { passive: true });
+}
+
 /* ---------- Menu navigasi (layar kecil) ---------- */
 const navTombol = document.getElementById('navTombol');
 const navMenu = document.getElementById('navMenu');
@@ -47,23 +119,7 @@ const pengamatBagian = new IntersectionObserver(
   if (el) pengamatBagian.observe(el);
 });
 
-/* ---------- Grafik komposisi SAMBARA ---------- */
-const grafik = document.getElementById('grafik');
-if (geraknyaDikurangi || !('IntersectionObserver' in window)) {
-  grafik.classList.add('tampil');
-} else {
-  new IntersectionObserver(
-    (entri, pengamat) => {
-      if (entri[0].isIntersecting) {
-        grafik.classList.add('tampil');
-        pengamat.disconnect();
-      }
-    },
-    { threshold: 0.35 }
-  ).observe(grafik);
-}
-
-/* ---------- TELARA: tetes jeruk nipis ---------- */
+/* ---------- MOO-KRIM: tetes jeruk nipis ---------- */
 const es = document.getElementById('esTelara');
 const tombolJeruk = document.getElementById('tombolJeruk');
 const esKet = document.getElementById('esKet');
@@ -81,7 +137,7 @@ tombolJeruk.addEventListener('click', () => {
 
   tombolJeruk.setAttribute('aria-pressed', String(jadiUngu));
   tombolJeruk.textContent = jadiUngu ? 'Kembalikan ke biru' : 'Teteskan jeruk nipis';
-  esJudul.textContent = jadiUngu ? 'Ilustrasi es krim TELARA berwarna ungu' : 'Ilustrasi es krim TELARA berwarna biru';
+  esJudul.textContent = jadiUngu ? 'Ilustrasi es krim MOO-KRIM berwarna ungu' : 'Ilustrasi es krim MOO-KRIM berwarna biru';
   esKet.textContent = jadiUngu
     ? 'Warnanya berubah menjadi ungu karena antosianin pada bunga telang bereaksi dengan asam jeruk nipis.'
     : 'Bunga telang mengandung pigmen antosianin yang berubah warna saat terkena asam.';
@@ -103,13 +159,13 @@ function susunPesan() {
   const nama = d.nama.value.trim();
   const alamat = d.alamat.value.trim();
   const sambara = angka(d.sambara.value);
-  const telara = angka(d.telara.value);
+  const mookrim = angka(d.mookrim.value);
   const catatan = d.catatan.value.trim();
 
   const baris = ['Halo Tim Aksara Peduli Argantara, saya ingin memesan:'];
   if (sambara) baris.push(`- SAMBARA (Sambal Bandeng Aksara, 150 g): ${sambara} pcs`);
-  if (telara) baris.push(`- TELARA (Telang Aksara): ${telara} pcs`);
-  if (!sambara && !telara) baris.push('- (belum ada produk dipilih)');
+  if (mookrim) baris.push(`- MOO-KRIM (es krim yoghurt): ${mookrim} pcs`);
+  if (!sambara && !mookrim) baris.push('- (belum ada produk dipilih)');
   baris.push('');
   baris.push(`Nama: ${nama || '-'}`);
   baris.push(`Alamat/kota: ${alamat || '-'}`);
@@ -132,7 +188,7 @@ function periksa() {
     el.setAttribute('aria-invalid', String(salah));
     if (salah) kosong.push(el);
   });
-  const adaProduk = angka(d.sambara.value) + angka(d.telara.value) > 0;
+  const adaProduk = angka(d.sambara.value) + angka(d.mookrim.value) > 0;
 
   if (kosong.length) {
     galat.textContent = 'Nama dan alamat wajib diisi.';

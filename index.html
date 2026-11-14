@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aksara Peduli Argantara — SAMBARA &amp; TELARA dari Desa Apa'an</title>
-  <meta name="description" content="Aksara Peduli Argantara: program pengabdian mahasiswa UNESA 2026 bersama warga Desa Apa'an, Kabupaten Sampang. Produk SAMBARA (Sambal Bandeng Aksara) dan TELARA (Telang Aksara)." />
+  <title>Aksara Peduli Argantara — SAMBARA &amp; MOO-KRIM dari Desa Apa'an</title>
+  <meta name="description" content="Aksara Peduli Argantara: program pengabdian mahasiswa UNESA 2026 bersama warga Desa Apa'an, Kabupaten Sampang. Produk SAMBARA (Sambal Bandeng Aksara) dan MOO-KRIM (es krim yoghurt dengan ekstrak wedang uwuh dan bunga telang)." />
   <meta name="theme-color" content="#000000" />
   <link rel="icon" href="img/favicon.png" type="image/png" sizes="64x64" />
   <link rel="apple-touch-icon" href="img/logo-aksara.png" />
@@ -41,15 +41,27 @@
   <main id="konten">
     <!-- ================= HERO ================= -->
     <section class="hero" id="beranda" aria-labelledby="judulHero">
-      <div class="wadah">
-        <p class="label">Pengabdian mahasiswa UNESA · 2026</p>
-        <h1 class="hero__judul" id="judulHero">Rasa Madura, diolah bersama warga <em>Apa'an</em>.</h1>
-        <p class="hero__lead">
-          Aksara Peduli Argantara adalah tim pengabdian mahasiswa Universitas Negeri Surabaya
-          yang bekerja bersama warga Desa Apa'an, Kabupaten Sampang, untuk mengembangkan
-          dua produk olahan khas desa.
-        </p>
+      <div class="hero__sampul">
+        <img class="hero__foto" src="img/hero-warga.jpg"
+          srcset="img/hero-warga-960.jpg 960w, img/hero-warga.jpg 1920w" sizes="100vw"
+          width="1920" height="1069" fetchpriority="high"
+          alt="Foto bersama warga dan tim Aksara Peduli Argantara" />
+        <div class="wadah hero__teks">
+          <p class="label">Pengabdian mahasiswa UNESA · 2026</p>
+          <h1 class="hero__judul" id="judulHero">
+            <span class="baris">Rasa Madura,</span>
+            <span class="baris">diolah bersama</span>
+            <span class="baris">warga <em>Apa'an.</em></span>
+          </h1>
+          <p class="hero__lead">
+            Aksara Peduli Argantara adalah tim pengabdian mahasiswa Universitas Negeri Surabaya
+            yang bekerja bersama warga Desa Apa'an, Kabupaten Sampang, untuk mengembangkan
+            dua produk olahan khas desa.
+          </p>
+        </div>
+      </div>
 
+      <div class="wadah">
         <div class="hero__panel">
           <a href="#sambara" class="panel panel--merah">
             <div class="panel__teks">
@@ -65,15 +77,15 @@
             </figure>
           </a>
 
-          <a href="#telara" class="panel panel--hitam">
+          <a href="#moo-krim" class="panel panel--hitam">
             <div class="panel__teks">
               <span class="panel__kecil">Produk 02</span>
-              <span class="panel__nama">TELARA</span>
-              <span class="panel__sub">Telang Aksara</span>
-              <span class="panel__desk">Es krim bunga telang berwarna biru.</span>
+              <span class="panel__nama">MOO-KRIM</span>
+              <span class="panel__sub">Alami &amp; Segar</span>
+              <span class="panel__desk">Es krim yoghurt dengan ekstrak wedang uwuh dan bunga telang.</span>
               <span class="panel__tautan">Lihat produk <span aria-hidden="true">→</span></span>
             </div>
-            <svg class="es es--kecil panel__foto" viewBox="0 0 200 220" role="img" aria-label="Ilustrasi es krim TELARA berwarna biru">
+            <svg class="es es--kecil panel__foto" viewBox="0 0 200 220" role="img" aria-label="Ilustrasi es krim MOO-KRIM">
               <use href="#esKrim" />
             </svg>
           </a>
@@ -98,8 +110,8 @@
             </p>
             <p>
               Bersama warga Desa Apa'an, kami mengolah potensi lokal menjadi dua produk:
-              <strong>SAMBARA</strong>, sambal bekasam ikan bandeng, dan <strong>TELARA</strong>,
-              es krim bunga telang.
+              <strong>SAMBARA</strong>, sambal bekasam ikan bandeng, dan <strong>MOO-KRIM</strong>,
+              es krim yoghurt dengan ekstrak wedang uwuh dan bunga telang.
             </p>
           </div>
 
@@ -108,7 +120,7 @@
             <div><dt>Tahun</dt><dd>2026</dd></div>
             <div><dt>Didukung oleh</dt><dd>DPPM Kemdiktisaintek</dd></div>
             <div><dt>Mitra</dt><dd>Desa Apa'an, Kabupaten Sampang, Jawa Timur</dd></div>
-            <div><dt>Produk</dt><dd>SAMBARA &amp; TELARA</dd></div>
+            <div><dt>Produk</dt><dd>SAMBARA &amp; MOO-KRIM</dd></div>
           </dl>
         </div>
 
@@ -176,6 +188,22 @@
               <div><dt>Daya tahan</dt><dd>1 minggu</dd></div>
               <div><dt>Harga</dt><dd><span class="isian">[Harga]</span></dd></div>
             </dl>
+
+            <!-- Komposisi: daftar bahan, gaya sama dengan MOO-KRIM -->
+            <figure class="grafik komposisi">
+              <figcaption class="grafik__judul">Komposisi SAMBARA</figcaption>
+              <p class="komposisi__ket">Persentase bahan · netto 150 g</p>
+
+              <ul class="komposisi__daftar">
+                <li><span>Cabai merah keriting &amp; rawit</span><span>35%</span></li>
+                <li><span>Minyak nabati (kelapa sawit)</span><span>25%</span></li>
+                <li><span>Bekasam ikan bandeng</span><span>20%</span></li>
+                <li><span>Bawang merah</span><span>10%</span></li>
+                <li><span>Bawang putih</span><span>5%</span></li>
+                <li><span>Gula &amp; penyedap rasa</span><span>3%</span></li>
+                <li><span>Rempah (serai, daun jeruk)</span><span>2%</span></li>
+              </ul>
+            </figure>
           </div>
 
           <div class="pita__visual">
@@ -183,43 +211,60 @@
               <img src="img/sambal.png" alt="Sambal bandeng SAMBARA siap disajikan" onerror="this.parentNode.classList.add('foto--kosong')" />
               <span class="foto__ganti">Foto sambal<br /><small>img/sambal.png</small></span>
             </figure>
-
-            <figure class="grafik" id="grafik">
-              <figcaption class="grafik__judul">Komposisi SAMBARA</figcaption>
-              <ul class="grafik__daftar">
-                <li style="--n:35; --w:#C92A2A"><span class="grafik__label">Cabai merah keriting &amp; rawit</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">35%</span></li>
-                <li style="--n:25; --w:#D99A00"><span class="grafik__label">Minyak nabati (kelapa sawit)</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">25%</span></li>
-                <li style="--n:20; --w:#4D6478"><span class="grafik__label">Bekasam ikan bandeng</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">20%</span></li>
-                <li style="--n:10; --w:#8E2F5E"><span class="grafik__label">Bawang merah</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">10%</span></li>
-                <li style="--n:5;  --w:#857A66"><span class="grafik__label">Bawang putih</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">5%</span></li>
-                <li style="--n:3;  --w:#6B4A2B"><span class="grafik__label">Gula &amp; penyedap rasa</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">3%</span></li>
-                <li style="--n:2;  --w:#3F6B32"><span class="grafik__label">Rempah (serai, daun jeruk)</span><span class="grafik__batang"><span></span></span><span class="grafik__nilai">2%</span></li>
-              </ul>
-            </figure>
           </div>
         </div>
       </article>
 
-      <!-- TELARA -->
-      <article class="pita pita--hitam" id="telara" aria-labelledby="judulTelara">
+      <!-- MOO-KRIM -->
+      <article class="pita pita--hitam" id="moo-krim" aria-labelledby="judulMooKrim">
         <div class="wadah pita__isi">
           <div class="pita__info">
             <p class="pita__kecil">Produk 02 · Ukuran <span class="isian">[...]</span></p>
-            <h3 class="pita__judul" id="judulTelara">TELARA</h3>
-            <p class="pita__sub">Telang Aksara</p>
-            <p>Es krim bunga telang berwarna biru.</p>
+            <h3 class="pita__judul pita__judul--panjang" id="judulMooKrim">MOO-KRIM</h3>
+            <p class="pita__tagline">Alami &amp; Segar</p>
+            <p class="pita__sub">Es krim yoghurt dengan ekstrak wedang uwuh dan bunga telang</p>
+            <p>
+              Es krim yoghurt dari susu sapi murni, diberi ekstrak bunga telang dan rempah wedang uwuh:
+              secang, jahe, kayu manis, cengkeh, dan pala. Rasanya segar dari yoghurt dengan hangat rempah.
+            </p>
 
             <dl class="spek">
               <div><dt>Ukuran</dt><dd><span class="isian">[...]</span></dd></div>
-              <div><dt>Komposisi</dt><dd><span class="isian">[...]</span></dd></div>
               <div><dt>Penyimpanan</dt><dd><span class="isian">[...]</span></dd></div>
               <div><dt>Harga</dt><dd><span class="isian">[Harga]</span></dd></div>
             </dl>
+
+            <!-- Komposisi: daftar bahan per satu adonan (bukan persentase) -->
+            <figure class="grafik komposisi">
+              <figcaption class="grafik__judul">Komposisi MOO-KRIM</figcaption>
+              <p class="komposisi__ket">Resep per satu adonan</p>
+
+              <h4 class="komposisi__grup">Bahan utama</h4>
+              <ul class="komposisi__daftar">
+                <li><span>Susu sapi murni</span><span>1 L</span></li>
+                <li><span>Gula pasir</span><span>250 g</span></li>
+                <li><span>Air</span><span>130 mL</span></li>
+                <li><span>Gula batu</span><span>50 g</span></li>
+                <li><span>Bunga telang kering</span><span>15 g</span></li>
+                <li><span>Starter yoghurt</span><span>4 sendok</span></li>
+              </ul>
+
+              <h4 class="komposisi__grup">Rempah wedang uwuh</h4>
+              <ul class="komposisi__daftar">
+                <li><span>Serutan kayu secang</span><span>10 g</span></li>
+                <li><span>Jahe</span><span>1 buah</span></li>
+                <li><span>Kayu manis</span><span>4 cm</span></li>
+                <li><span>Cengkeh</span><span>5 butir</span></li>
+                <li><span>Pala</span><span>½ buah</span></li>
+                <li><span>Daun kayu manis kering</span><span>2 lembar</span></li>
+                <li><span>Daun cengkeh kering</span><span>3 lembar</span></li>
+              </ul>
+            </figure>
           </div>
 
           <div class="pita__visual pita__visual--telara">
             <svg class="es" id="esTelara" viewBox="0 0 200 220" role="img" aria-labelledby="esJudul">
-              <title id="esJudul">Ilustrasi es krim TELARA</title>
+              <title id="esJudul">Ilustrasi es krim MOO-KRIM</title>
               <defs>
                 <g id="esKrim">
                   <path class="es__cup" d="M42 122h116l-15 86H57z" />
@@ -272,7 +317,7 @@
             </li>
             <li>
               <h3>Mengembangkan resep</h3>
-              <p>Menyusun resep SAMBARA dan TELARA bersama warga, lalu mengujinya.</p>
+              <p>Menyusun resep SAMBARA dan MOO-KRIM bersama warga, lalu mengujinya.</p>
             </li>
             <li>
               <h3>Pelatihan produksi</h3>
@@ -318,8 +363,8 @@
                 <input id="fSambara" name="sambara" type="number" min="0" max="99" value="0" inputmode="numeric" />
               </div>
               <div class="form__jumlah">
-                <label for="fTelara">TELARA</label>
-                <input id="fTelara" name="telara" type="number" min="0" max="99" value="0" inputmode="numeric" />
+                <label for="fMooKrim">MOO-KRIM</label>
+                <input id="fMooKrim" name="mookrim" type="number" min="0" max="99" value="0" inputmode="numeric" />
               </div>
             </fieldset>
 
@@ -339,10 +384,11 @@
               <button type="button" class="tombol tombol--garis" id="tombolSalin">Salin pesan</button>
             </div>
             <p class="pratinjau__status" id="statusSalin" aria-live="polite"></p>
-            <p class="pratinjau__kontak">
-              WhatsApp: <span class="isian">[Nomor WhatsApp]</span> ·
-              Instagram: <span class="isian">[@akun]</span>
-            </p>
+            <ul class="pratinjau__kontak">
+              <li><span>WhatsApp</span> <span class="isian">[Nomor WhatsApp]</span></li>
+              <li><span>Instagram</span> <a href="https://www.instagram.com/aksarapeduliargantara/" target="_blank" rel="noopener">@aksarapeduliargantara<span class="sr"> (tab baru)</span></a></li>
+              <li><span>TikTok</span> <a href="https://www.tiktok.com/@aksarapeduli" target="_blank" rel="noopener">@aksarapeduli<span class="sr"> (tab baru)</span></a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -354,15 +400,32 @@
     <div class="wadah">
       <div class="logo" role="list" aria-label="Didukung oleh">
         <!-- Mahasiswa Berdampak & Diktisaintek Berdampak tidak punya situs khusus, jadi diarahkan ke situs Kemdiktisaintek. -->
+        <!-- Urutan mengikuti strip logo resmi tim (Footer.png): Kemdiktisaintek, Ditjen Risbang,
+             Diktisaintek Berdampak, Mahasiswa Berdampak, UNESA, (Kab. Sampang), Aksara. -->
         <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/" target="_blank" rel="noopener"><img src="img/logo-kemdiktisaintek.png" alt="Logo Kementerian Pendidikan Tinggi, Sains, dan Teknologi (Kemdiktisaintek)" /><span class="sr"> (situs resmi, tab baru)</span></a></div>
+        <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/public-service/layanan-ditjen-risbang" target="_blank" rel="noopener"><img src="img/logo-ditjen-risbang.png" alt="Logo Direktorat Jenderal Riset dan Pengembangan (Ditjen Risbang)" /><span class="sr"> (halaman resmi, tab baru)</span></a></div>
+        <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/" target="_blank" rel="noopener"><img src="img/logo-diktisaintek-berdampak.png" alt="Logo Diktisaintek Berdampak" /><span class="sr"> (situs Kemdiktisaintek, tab baru)</span></a></div>
         <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/" target="_blank" rel="noopener"><img src="img/logo-mahasiswa-berdampak.png" alt="Logo Mahasiswa Berdampak" /><span class="sr"> (situs Kemdiktisaintek, tab baru)</span></a></div>
         <div class="kotak" role="listitem"><a href="https://unesa.ac.id/" target="_blank" rel="noopener"><img src="img/logo-unesa.png" alt="Logo Universitas Negeri Surabaya (UNESA)" /><span class="sr"> (situs resmi, tab baru)</span></a></div>
         <div class="kotak" role="listitem"><a href="https://sampangkab.go.id/" target="_blank" rel="noopener"><img src="img/Lambang_Kabupaten_Sampang.png" alt="Lambang Kabupaten Sampang" /><span class="sr"> (situs resmi, tab baru)</span></a></div>
-        <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/public-service/layanan-ditjen-risbang" target="_blank" rel="noopener"><img src="img/logo-ditjen-risbang.png" alt="Logo Direktorat Jenderal Riset dan Pengembangan (Ditjen Risbang)" /><span class="sr"> (halaman resmi, tab baru)</span></a></div>
-        <div class="kotak" role="listitem"><a href="https://kemdiktisaintek.go.id/" target="_blank" rel="noopener"><img src="img/logo-diktisaintek-berdampak.png" alt="Logo Diktisaintek Berdampak" /><span class="sr"> (situs Kemdiktisaintek, tab baru)</span></a></div>
+        <div class="kotak" role="listitem"><img src="img/logo-aksara.png" alt="Logo Aksara Peduli Argantara" /></div>
       </div>
       <div class="footer__bawah">
         <p class="merek merek--footer"><img class="merek__logo merek__logo--footer" src="img/logo-aksara.png" alt="" width="48" height="48" /><span class="merek__teks">Aksara <span>Peduli Argantara</span></span></p>
+        <ul class="sosmed" aria-label="Media sosial">
+          <li>
+            <a href="https://www.instagram.com/aksarapeduliargantara/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+              <span>@aksarapeduliargantara</span><span class="sr"> di Instagram (tab baru)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@aksarapeduli" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14 3h3c.2 1.8 1.6 3.3 3.5 3.5v3c-1.3 0-2.5-.4-3.5-1v6.3A5.8 5.8 0 1 1 11 9v3.1a2.8 2.8 0 1 0 3 2.8z"/></svg>
+              <span>@aksarapeduli</span><span class="sr"> di TikTok (tab baru)</span>
+            </a>
+          </li>
+        </ul>
         <p>© 2026 Aksara Peduli Argantara · Universitas Negeri Surabaya bersama Desa Apa'an, Kabupaten Sampang.</p>
       </div>
     </div>
